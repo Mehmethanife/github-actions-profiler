@@ -39,7 +39,7 @@ export default function CreateIngesterWorkflowButton() {
   };
 
   return (
-    <Flex gap={6} flexDirection='column' alignItems={'left'}>
+    <Flex gap={6} flexDirection='column' alignItems='flex-start'>
       <Paragraph>
         Set up a workflow that collects data from a github repository of your choice.
         <ExpandableText>

@@ -13,7 +13,7 @@ export const Card = (props: CardProps) => {
 
   return (
     <Surface as={Flex} flexDirection='column' gap={16}>
-      <Flex gap={6} flexDirection='column' alignItems='left'>
+      <Flex gap={6} flexDirection='column' alignItems='flex-start'>
         <Heading as='h2' level={4}>
           {title}
         </Heading>

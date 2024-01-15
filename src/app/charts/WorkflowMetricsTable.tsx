@@ -16,9 +16,13 @@ export const WorkflowMetricsTable = ({ workflow }: WorkflowMetricsTableProps) =>
     id: `${idx}`,
     header: heading,
     accessor: `values[${idx}]`,
+    autoWidth: true,
   }));
 
-  const columns: TableColumn[] = [{ id: 'metrics', header: 'Workflow metrics', accessor: 'metric' }, ...valueColumns];
+  const columns: TableColumn[] = [
+    { id: 'metrics', header: 'Workflow metrics', accessor: 'metric', minWidth: 200 },
+    ...valueColumns,
+  ];
 
   const tableVariant: TableVariantConfig = {
     rowDensity: 'default',
