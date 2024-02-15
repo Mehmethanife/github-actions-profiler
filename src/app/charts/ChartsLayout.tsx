@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Flex, Grid } from '@dynatrace/strato-components-preview';
-import { WorkflowSelect } from './WorkflowSelect';
+import { Flex, FormField, Grid, SelectV2 } from '@dynatrace/strato-components-preview';
 import { WorkflowMetricsTable } from './WorkflowMetricsTable';
 import SuccessRateDonutChart from './SuccessRateDonutChart';
 import { WeeklyCycleTimesChart } from './WeeklyCycleTimesChart';
@@ -18,7 +17,17 @@ export const ChartsLayout = () => {
   return (
     <Flex flexDirection='column'>
       <Flex>
-        <WorkflowSelect selectedWorkflow={selectedWorkflow} workflows={workflows} onChange={setSelectedWorkflow} />
+        <FormField label='Select a workflow'>
+          <SelectV2 value={selectedWorkflow} onChange={setSelectedWorkflow}>
+            <SelectV2.Content>
+              {workflows.map((workflow) => (
+                <SelectV2.Option key={workflow} value={workflow}>
+                  {workflow}
+                </SelectV2.Option>
+              ))}
+            </SelectV2.Content>
+          </SelectV2>
+        </FormField>
       </Flex>
       {selectedWorkflow && (
         <Grid gridTemplateColumns='repeat(auto-fit, minmax(320px, 1fr))' gap={16}>
