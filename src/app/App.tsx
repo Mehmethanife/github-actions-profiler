@@ -40,7 +40,7 @@ export const App = () => {
                 </ExternalLink>
               </Text>
             </List>
-            <Grid gridTemplateColumns='repeat(auto-fit, minmax(320px, 1fr));' gap={16}>
+            <Grid gridTemplateColumns='repeat(auto-fit, minmax(320px, 1fr))' gap={16}>
               {!isDataReady ? (
                 <InitialDataImportSelector
                   dataImportState={state}

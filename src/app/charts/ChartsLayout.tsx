@@ -21,7 +21,7 @@ export const ChartsLayout = () => {
         <WorkflowSelect selectedWorkflow={selectedWorkflow} workflows={workflows} onChange={setSelectedWorkflow} />
       </Flex>
       {selectedWorkflow && (
-        <Grid gridTemplateColumns='repeat(auto-fit, minmax(320px, 1fr));' gap={16}>
+        <Grid gridTemplateColumns='repeat(auto-fit, minmax(320px, 1fr))' gap={16}>
           <Grid gridItem gridColumnStart='span 3'>
             <WorkflowMetricsTable workflow={selectedWorkflow} />
           </Grid>
